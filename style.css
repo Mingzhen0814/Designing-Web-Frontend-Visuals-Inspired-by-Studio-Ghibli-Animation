@@ -1,0 +1,381 @@
+@media screen and (min-width: 1200px) {
+    .charactorMa {
+        height: 1300px;
+    }
+
+    .introText {
+        width: 100%;
+        position: relative;
+    }
+
+    .actorLeft p,
+    .actorRight p {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .mask1 {
+        font-size: 10rem;
+    }
+    .leftImg{
+        background-position: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .charactorMa {
+        height: 900px;
+    }
+
+    .actorLeft p,
+    .actorRight p {
+        display: none;
+    }
+
+    .introText {
+        width: 100%;
+        position: relative;
+    }
+
+    .actorLeft h3,
+    .actorRight h3 {
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .charactorMa {
+        height: 80vh;
+    }
+    .leftImg{
+        background-position:60% 0;
+    }
+    .drama3-1{
+        background-position:70% 0;
+    }
+    .drama3-4{
+        background-position:40% 0;
+    }
+}
+
+html {
+    --logoColor: #109CEB;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 1210px) {
+    footer {
+        height: 10vh;
+    }
+
+    .footerContent {
+        display: none;
+    }
+
+    .copyright {
+        display: block;
+    }
+
+    .mask1 {
+        position: absolute;
+        font-size: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* nav */
+/* nav [class^=col] {
+     border: 2px solid red; 
+} */
+
+nav>a {
+    cursor: pointer;
+}
+
+.logo {
+    background-color: var(--logoColor);
+    height: 15vh;
+    background-image: url('./img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sen {
+    background-image: url('./img/sen_05_color.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(100%);
+}
+
+.hau {
+    background-image: url('./img/hau_08_color.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(100%);
+}
+
+.to {
+    background-image: url('./img/to_02_color.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(100%);
+}
+
+
+.ma {
+    background-image: url('./img/ma_02_color.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(100%);
+}
+
+.sen:hover,
+.hau:hover,
+.to:hover,
+.ma:hover {
+    filter: none;
+}
+
+.work {
+    height: 40vh;
+    /* border: 1px solid blue; */
+}
+
+.work:hover {
+    cursor: pointer;
+}
+
+.work:nth-child(1) {
+    background-image: url('./img/sen_bg_01.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.work:hover {
+    scale: 105%;
+    transition: all 0.5s;
+}
+
+.work>.actor {
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    display: none;
+}
+
+.work:nth-child(1):hover>.actor {
+    background-image: url('./img/sen_p_01.png');
+    bottom: -20%;
+    right: -5%;
+    height: 300px;
+    width: 150px;
+    display: block;
+}
+
+.work:nth-child(2):hover>.actor {
+    background-image: url('./img/hau_p_01.png');
+    height: 300px;
+    width: 360px;
+    bottom: -20%;
+    left: -5%;
+    display: block;
+}
+
+.work:nth-child(3):hover>.actor {
+    background-image: url('./img/to_p_01.png');
+    height: 300px;
+    width: 360px;
+    bottom: -52%;
+    left: -5%;
+    display: block;
+
+}
+
+.work:nth-child(4):hover>.actor {
+    background-image: url('./img/ma_p_01.png');
+    height: 200px;
+    width: 350px;
+    top: 50%;
+    right: -15%;
+    display: block;
+}
+
+.work:nth-child(2) {
+    background-image: url('./img/hau_bg_01.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.work:nth-child(3) {
+    background-image: url('./img/to_bg_01.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.work:nth-child(4) {
+    background-image: url('./img/ma_bg_01.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* menu */
+.navIcon {
+    margin-left: 2%;
+    color: lightgray;
+}
+
+.menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 8000;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+.menuContent {
+    position: relative;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.menu .logo {
+    background-color: gray;
+}
+
+.menu .logo:hover {
+    background-color: var(--logoColor);
+}
+
+.menuContent a {
+    padding: 5%;
+    display: block;
+    font-weight: bolder;
+    background-position: center;
+}
+
+.menuContent a:not(.sen) {
+    background-position: 50% 30%;
+}
+
+.menuContent a:hover {
+    color: rgb(249, 236, 228);
+    scale: 105%;
+    transition: all 0.3s;
+}
+
+.closeMenu {
+    display: none;
+}
+
+/* footer */
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+    z-index: 1000;
+}
+
+a:hover {
+    color: white;
+}
+
+.go-to-top {
+    height: 20vh;
+    width: 20vh;
+    /* border: 1px solid orange; */
+    background-image: url("./img/gon_02.png");
+    background-size: contain;
+    background-position: cover;
+    background-repeat: no-repeat;
+}
+
+.tip {
+    visibility: hidden;
+}
+
+.go-to-top:hover>.tip {
+    font-size: 1rem;
+    visibility: visible;
+    content: "回到頂端";
+    font-weight: bolder;
+    color: black;
+    border: 3px solid #292166;
+    background-color: #fff;
+    position: absolute;
+    bottom: 100%;
+    margin: 20%;
+    padding: 5%;
+}
+
+/* hamburger menu */
+.menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 8000;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+.menuContent {
+    position: relative;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.menu .logo {
+    background-color: gray;
+}
+
+.menu .logo:hover {
+    background-color: var(--logoColor);
+}
+
+.menuContent a {
+    padding: 5%;
+    display: block;
+    font-weight: bolder;
+    background-position: center;
+}
+
+.menuContent a:not(.sen) {
+    background-position: 50% 30%;
+}
+
+.menuContent a:hover {
+    color: rgb(249, 236, 228);
+    scale: 105%;
+    transition: all 0.3s;
+}
+
+.closeMenu {
+    display: none;
+}

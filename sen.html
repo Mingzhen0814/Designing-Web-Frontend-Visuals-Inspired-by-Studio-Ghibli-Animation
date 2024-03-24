@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_江明臻_小專</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./style.css">
+    <!-- icon引用 -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <!-- wow.js引用 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!-- slick-slide引用 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+    <!-- bootstrap引用 -->
+    <script src="./bootstrap.js"></script>
+    <!-- 小專js -->
+    <script src="./project.js"></script>
+    <style>
+        .parallaxContainer {
+            position: relative;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .bg1 {
+            background-image: url('./img/sen_bg_02.jpg');
+            height: 600px;
+        }
+
+        .bg2 {
+            background-image: url('./img/sen_bg_03.jpg');
+            height: 500px;
+        }
+
+        .bg3 {
+            background-image: url('./img/sen_bg_04.jpg');
+            height: 500px;
+        }
+
+        .mask {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .poster {
+            margin: 3rem;
+            z-index: 1000;
+            height: 70%;
+            bottom: 20px;
+            left: 25%;
+            transform: translateX(-50%);
+        }
+
+        @media screen and (max-width: 768px) {
+            .poster {
+                margin: 0;
+                top: 15%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .movieNameSen {
+                display: none;
+            }
+
+            .picContainer {
+                display: none;
+            }
+
+            .introPara {
+                font-size: 0.7em;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .move {
+                display: none;
+            }
+
+            .easeText {
+                letter-spacing: 1.5em;
+                white-space: nowrap;
+            }
+        }
+
+        .movieNameSen {
+            z-index: 1000;
+            color: white;
+            top: 25%;
+            left: 60%;
+        }
+
+        .color1 {
+            z-index: 5000;
+            background-color: var(--logoColor);
+            width: 100%;
+            /* height: 250px; */
+            transform: translateZ(-1px);
+            padding: 1%;
+        }
+
+        .color2 {
+            z-index: 5000;
+            background-color: rgb(249, 236, 228);
+            width: 100vw;
+            transform: translateZ(-1px);
+        }
+
+        .picContainer {
+            z-index: 1000;
+            height: 40%;
+            width: 30%;
+            top: 50%;
+            left: 60%;
+            margin-right: 5%;
+            z-index: 1000;
+            transform: translateZ(-1px);
+        }
+
+        .pic {
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            flex: 1;
+        }
+
+        .pic:hover {
+            flex: 4;
+        }
+
+        .pic:nth-child(1) {
+            background-image: url('./img/sen_01.jpg');
+        }
+
+        .pic:nth-child(2) {
+            background-image: url('./img/sen_12.jpg');
+        }
+
+        .pic:nth-child(3) {
+            background-image: url('./img/sen_11.jpg');
+        }
+
+        .pic:nth-child(4) {
+            background-image: url('./img/sen_10.jpg');
+        }
+
+        .actor {
+            bottom: -10%;
+            width: 25%;
+            right: 5%;
+            background-attachment: fixed;
+            margin: 3rem;
+        }
+
+        .intro {
+            color: white;
+            top: 15%;
+            left: 5%;
+        }
+
+        .introPara {
+            color: white;
+            top: 25%;
+            left: 5%;
+            width: 40%;
+            overflow-wrap: break-word;
+        }
+
+        .slick-slide {
+            width: 80vw;
+            height: 20vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 8000;
+            padding-right: 1%;
+            transform: translateZ(-1px);
+        }
+
+        .move {
+            z-index: 50;
+            transform: translateZ(-3px);
+            width: 20%;
+            bottom: -10%;
+            transform: translateX(350%);
+            animation-name: fromLeftToRight;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes fromLeftToRight {
+            from {
+                transform: translateX(0%);
+            }
+
+            to {
+                transform: translateX(350%);
+            }
+        }
+
+        .easeText {
+            animation-duration: 10s;
+            z-index: 50;
+            transform: translateZ(-3px);
+            color: var(--logoColor);
+            opacity: 0;
+            animation-name: ease;
+            animation-delay: 3s;
+            animation-iteration-count: 1;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50%;
+            letter-spacing: 2em;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes ease {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="menu" class="menu">
+        <a id="openMenu" href="#" class="position-fixed navIcon" onclick="openMenu()"><i
+                class="fi fi-br-menu-burger"></i></a>
+        <a id="closeMenu" href="#" class="position-fixed navIcon" onclick="closeMenu()" style="display: none;"><i
+                class="fi fi-br-cross"></i></a>
+        <div class="menuContent row container">
+            <a href="./index.html" class="col-12 logo">回到首頁</a>
+            <a class="col-12 sen" style="filter: none;">神隱少女</a>
+            <a href="./hau.html" class="col-12 hau">霍爾的移動城堡</a>
+            <a href="./to.html" class="col-12 to">龍貓</a>
+            <a href="./ma.html" class="col-12 ma">魔女宅急便</a>
+        </div>
+    </nav>
+
+    <main class="w-100 position-relative">
+        <div class="parallaxContainer bg1">
+            <div class="mask position-absolute"></div>
+            <img id="poster" class="poster position-absolute" src="./img/sen_05.jpg" alt="poster">
+            <h1 id="movieNameSen" class="movieNameSen position-absolute ms-3">神隱少女</h1>
+            <div id="picContainer" class="row picContainer ms-3 position-absolute">
+                <div class="col-3 pic rounded"></div>
+                <div class="col-3 pic rounded"></div>
+                <div class="col-3 pic rounded"></div>
+                <div class="col-3 pic rounded"></div>
+            </div>
+        </div>
+        <div class="color1 d-flex justify-content-center p-5">
+            <img src="./img/logo.png" alt="logo" style="width: 70%;">
+        </div>
+        <div class="parallaxContainer bg2 position-relative">
+            <div class="mask position-absolute"></div>
+            <img id="actor" class="actor position-absolute" src="./img/sen_14.png" alt="actor">
+            <h1 class="intro position-absolute ms-3">劇情介紹</h1>
+            <p class="introPara position-absolute ms-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum,
+                autem accusamus? Et ipsa, assumenda eligendi molestiae in qui aperiam deserunt hic perferendis
+                voluptatem, incidunt libero voluptates corporis cupiditate reprehenderit eveniet.</p>
+        </div>
+        <div class="slick-container color1">
+            <div class="slick-wrapper" style="margin: 0 -80px;">
+                <img class="slick-slide" src='./img/sen_13.jpg'></img>
+                <img class="slick-slide" src='./img/sen_14.jpg'></img>
+                <img class="slick-slide" src='./img/sen_15.jpg'></img>
+                <img class="slick-slide" src='./img/sen_16.jpg'></img>
+                <img class="slick-slide" src='./img/sen_17.jpg'></img>
+                <img class="slick-slide" src='./img/sen_18.jpg'></img>
+                <img class="slick-slide" src='./img/sen_19.jpg'></img>
+                <img class="slick-slide" src='./img/sen_20.jpg'></img>
+                <img class="slick-slide" src='./img/sen_21.jpg'></img>
+                <img class="slick-slide" src='./img/sen_22.jpg'></img>
+            </div>
+        </div>
+        <div class="parallaxContainer bg3 position-relative">
+            <img data-wow-offset="300" class="wow move position-absolute" src="./img/sen_24.png" alt="picture">
+            <h1 data-wow-offset="300" class="wow easeText position-absolute fw-bolder">神隱少女</h1>
+            <p data-wow-offset="300" class="wow easeText position-absolute fw-bolder"
+                style="color: rgba(0, 0, 0, 0.4);top: 40%;">快去看</p>
+            <div class="mask position-absolute"></div>
+        </div>
+    </main>
+    <footer style="background-color: var(--logoColor);">
+        <div class="row p-5 footerContent">
+            <div class="col-3"></div>
+            <div class="col-3 p-5">
+                <h5 class="fw-bolder">關於我們</h5>
+                <p>公司名稱: 吉卜力工作室</p>
+                <p>地址: 日本東京都小金井市</p>
+                <p>電話: 04-12345678</p>
+            </div>
+            <div class="col-3 p-5">
+                <h5 class="fw-bolder">聯絡我們</h5>
+                <a href="https://www.facebook.com/dongurirepublic.tw/?locale=zh_TW" target="_blank">
+                    <i class="fi fi-brands-facebook"></i>
+                </a>
+                <a href="https://qr-official.line.me/gs/M_studioghibli_GW.png?from=page&openQrModal=true&searchId=studioghibli"
+                    target="_blank"><i class="fi fi-brands-line"></i>
+                </a>
+                <h5 class="fw-bolder">版權宣告</h5>
+                <p class="small">©2023 江明臻小專</p>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </footer>
+    <script>
+        $('.slick-wrapper').slick({
+            autoplay: true,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            speed: 4000,
+            autoplaySpeed: 0,
+            slidesToShow: 5,
+            touchMove: false,
+            arrows: false,
+            cssEase: 'linear',
+            infinite: true,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }]
+        });
+
+        new WOW().init();
+    </script>
+
+</body>
+
+</html>

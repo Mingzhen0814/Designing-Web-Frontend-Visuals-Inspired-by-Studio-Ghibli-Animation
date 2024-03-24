@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_江明臻_小專</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script src="./bootstrap.js"></script>
+    <!-- project -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="./project.js"></script>
+    <!-- icon -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        @media screen and (max-width: 768px) {
+            .mask1 {
+                font-size: 4rem;
+            }
+        }
+
+        .body {
+            overflow: hidden;
+        }
+
+        .mutiImg {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* border: 5px solid red; */
+        }
+
+        .leftImg {
+            background-image: url('./img/hau_10.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+        }
+
+        .rightImg {
+            position: absolute;
+            right: -5%;
+            bottom: 0;
+            background: url('./img/hau_09.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            mask-image: radial-gradient(circle, white 25%, transparent 50%);
+            width: 50%;
+            height: 50%;
+        }
+
+        @media screen and (min-width: 1200px) {
+            .bentoBox .h {
+                /* border: 2px solid orange; */
+                height: 60vh;
+            }
+
+            .bgContainer>div[class^="bg"]:not(.bg08):not(.bg09):not(.bg010) {
+                height: 500px;
+            }
+
+        }
+
+        @media screen and (min-width:992px) {
+            .bentoBox .h {
+                /* border: 2px solid orange; */
+                height: 30vh;
+            }
+
+            .bentoBox {
+                margin: 0 3rem;
+            }
+
+            .bgContainer>div[class^="bg"]:not(.bg08):not(.bg09):not(.bg010) {
+                height: 200px;
+            }
+
+        }
+
+        @media screen and (min-width:600px) {
+            .bentoBox .h {
+                /* border: 2px solid orange; */
+                height: 12vh;
+            }
+
+            .bentoBox {
+                margin: 0 2rem;
+            }
+
+            .bgContainer>div[class^="bg"]:not(.bg08):not(.bg09):not(.bg010) {
+                height: 150px;
+            }
+
+        }
+
+        @media screen and (max-width:600px) {
+            .bentoBox .h {
+                /* border: 2px solid orange; */
+                height: 10vh;
+            }
+
+            .bentoBox {
+                margin: 0 1rem;
+            }
+
+            .bgContainer>div[class^="bg"]:not(.bg08):not(.bg09):not(.bg010) {
+                height: 100px;
+            }
+        }
+
+        .bgContainer {
+            padding: 0;
+        }
+
+        .bgContainer div {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .bg01 {
+            background-image: url('./img/hau_002.jpg');
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg02 {
+            background-image: url('./img/hau_003.jpg');
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg04 {
+            background-position: left;
+            background-image: url('./img/hau_001.jpg');
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg05 {
+            background-image: url('./img/hau_005.jpg');
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg06 {
+            background-image: url('./img/hau_006.jpg');
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg07 {
+            background-image: url('./img/hau_009.jpg');
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg08 {
+            background-image: url('./img/hau_010.jpg');
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg09 {
+            background-image: url('./img/hau_007.jpg');
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg010 {
+            background-image: url('./img/hau_008.jpg');
+            width: 100%;
+            height: 100%;
+        }
+
+        .introHau::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(-45deg, transparent 33.33%, white 33.33%, white 66.66%, transparent 66.66%), linear-gradient(45deg, transparent 33.33%, white 33.33%, white 66.66%, transparent 66.66%);
+            transform: rotate(180deg);
+            background-size: 20px 40px;
+        }
+
+        .introHau {
+            position: relative;
+            height: 600vh;
+            background-color: var(--logoColor);
+        }
+
+        .introHauPara {
+            color: white;
+            font-weight: bolder;
+            text-shadow: 5px 5px 5px black;
+            position: absolute;
+        }
+
+        .intro1 {
+            position: absolute;
+            top: 13%;
+            left: 0;
+            width: 100vw;
+        }
+
+        .drama {
+            position: absolute;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 10px;
+            height: 50vh;
+            width: 65%;
+            border: 10px solid lightcyan;
+            box-shadow: 1px 1px 3px gray;
+        }
+
+        .drama1 {
+            background-image: url('./img/hau_13.jpg');
+            top: 10%;
+            left: 10%;
+        }
+
+        .drama1-1Para {
+            top: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .drama1-2Para {
+            top: 40vh;
+            left: 34%;
+        }
+
+        .drama2-1Para {
+            top: 180vh;
+            left: 34%;
+            z-index: 10;
+        }
+
+        .drama2-1 {
+            background-image: url('./img/hau_14.jpg');
+            top: 150vh;
+            left: 5%;
+            width: 40%;
+            height: 60vh;
+        }
+
+        .drama3-1Para {
+            top: 240vh;
+            left: 34%;
+        }
+
+        .drama3-1 {
+            background-image: url('./img/hau_15.jpg');
+            top: 260vh;
+            left: 5%;
+            width: 40%;
+            height: 60vh;
+        }
+
+        .drama3-2 {
+            background-image: url('./img/hau_16.jpg');
+            top: 290vh;
+            left: 25%;
+            width: 40%;
+            height: 60vh;
+            z-index: 10;
+        }
+
+        .drama3-3 {
+            background-image: url('./img/hau_17.jpg');
+            top: 280vh;
+            left: 50%;
+            width: 40%;
+            height: 60vh;
+        }
+
+        .drama3-4 {
+            background-image: url('./img/hau_18.jpg');
+            top: 360vh;
+            left: 10%;
+            width: 80%;
+            height: 100vh;
+        }
+
+        .drama4-1Para {
+            top: 540vh;
+            /* border: 2px solid red; */
+        }
+
+        .drama4-2Para {
+            top: 560vh;
+        }
+
+        .movieNameHau::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(-45deg, transparent 33.33%, var(--logoColor) 33.33%, var(--logoColor) 66.66%, transparent 66.66%), linear-gradient(45deg, transparent 33.33%, var(--logoColor) 33.33%, var(--logoColor) 66.66%, transparent 66.66%);
+            transform: rotate(180deg);
+            background-size: 20px 40px;
+        }
+
+        .movieNameHau {
+            position: relative;
+            height: 80vh;
+            background-color: rgb(249, 236, 228);
+            display: flex;
+        }
+
+        .mask1 {
+            height: 80%;
+            width: 100%;
+            text-align: center;
+            align-self: flex-end;
+            /* font-size: 10rem; */
+            background-image: url('./img/hau_19.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="menu" class="menu">
+        <a id="openMenu" href="#" class="position-fixed navIcon" onclick="openMenu()"><i
+                class="fi fi-br-menu-burger"></i></a>
+        <a id="closeMenu" href="#" class="position-fixed navIcon" onclick="closeMenu()" style="display: none;"><i
+                class="fi fi-br-cross"></i></a>
+        <div class="menuContent row container">
+            <a href="./index.html" class="col-12 logo">回到首頁</a>
+            <a href="./sen.html" class="col-12 sen">神隱少女</a>
+            <a href="./hau.html" class="col-12 hau" style="filter: none;">霍爾的移動城堡</a>
+            <a href="./to.html" class="col-12 to">龍貓</a>
+            <a href="./ma.html" class="col-12 ma">魔女宅急便</a>
+        </div>
+    </nav>
+    <main>
+        <div class="mutiImg">
+            <div class="leftImg"></div>
+            <div class="rightImg"></div>
+        </div>
+        <div class="bentoBox my-5">
+            <div class="row">
+                <div class="col-6 bgContainer p-2" data-aos="zoom-right" data-aos-duration="1000" data-aos-offset="200">
+                    <div class="bg01 rounded"></div>
+                </div>
+                <div class="col-6 bgContainer p-2" data-aos="zoom-left" data-aos-duration="2000" data-aos-offset="200">
+                    <div class="bg02 rounded"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 bgContainer p-2" data-aos="zoom-out-down" data-aos-duration="1500"
+                    data-aos-offset="400">
+                    <div class="bg06 rounded"></div>
+                </div>
+                <div class="col-6 bgContainer p-2" data-aos="zoom-in-up" data-aos-duration="2000" data-aos-offset="400">
+                    <div class="bg04 rounded"></div>
+                </div>
+                <div class="col-3 bgContainer p-2" data-aos="zoom-in-up" data-aos-duration="3000" data-aos-offset="400">
+                    <div class="bg05 rounded"></div>
+                </div>
+
+                <div class="row pe-0">
+                    <div class="col-3 bgContainer p-2" style="border-radius: 10px;overflow: hidden;"
+                        data-aos="zoom-out-right" data-aos-duration="1000" data-aos-offset="200">
+                        <video class="rounded" width="100%" height="100%" autoplay muted loop
+                            style="object-fit: cover;">
+                            <source src="./img/hau.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="col-3 bgContainer p-2" data-aos="zoom-in-up" data-aos-duration="2000"
+                        data-aos-offset="200">
+                        <div class="bg08 rounded"></div>
+                    </div>
+                    <div class="col-3 bgContainer p-2" data-aos="zoom-out-up" data-aos-duration="2500"
+                        data-aos-offset="200">
+                        <div class="bg09 rounded"></div>
+                    </div>
+                    <div class="col-3 bgContainer ps-2 py-2" data-aos="zoom-out-left" data-aos-duration="3000"
+                        data-aos-offset="200">
+                        <div class="bg010 rounded"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="introHau">
+            <h1 class="introHauPara drama1-1Para" data-aos="zoom-out-left">在充滿奇幻和魔法的夢幻世界中</h1>
+            <div class="intro1">
+                <div class="drama drama1" data-aos="zoom-out-up" data-aos-offset="400"></div>
+                <h1 class="introHauPara drama1-2Para" data-aos="zoom-out-up">年輕的女孩蘇菲受到<span
+                        style="color: MediumPurple;">荒野女巫的詛咒</span>變成老人
+                </h1>
+            </div>
+            <div class="intro2">
+                <h1 class="introHauPara drama2-1Para" data-aos="fade-in" data-aos-duration="3000">為解除詛咒，少女踏上<span
+                        style="color:khaki">奇幻冒險之旅</span></h1>
+                <div class="drama drama2-1" data-aos="fade-out" data-aos-delay="1500"></div>
+            </div>
+            <div class="intro3">
+                <h1 class="introHauPara drama3-1Para" data-aos="fade-in">途中遇到了許多一起冒險的夥伴</h1>
+                <div class="drama drama3-1" data-aos="zoom-in-left" data-aos-delay="1500"></div>
+                <div class="drama drama3-2" data-aos="zoom-in-down" data-aos-delay="2000"></div>
+                <div class="drama drama3-3" data-aos="zoom-in-right" data-aos-delay="1500"></div>
+                <div class="drama drama3-4" data-aos="zoom-out" data-aos-delay="1500" data-aos-offset="400"></div>
+            </div>
+            <div class="intro4 d-flex" style="justify-content: center">
+                <h1 class="introHauPara drama4-1Para" data-aos="zoom-in" data-aos-offset="100">這趟充滿魔法和奇蹟的旅程</h1>
+                <h1 class="introHauPara drama4-2Para" data-aos="fade-in" data-aos-duration="3000" data-aos-offset="200"
+                    style="color:#f9ece4">等你來探索</h1>
+            </div>
+        </div>
+        <div class="movieNameHau">
+            <div class="mask1">霍爾的移動城堡</div>
+        </div>
+    </main>
+    <footer style="background-color: var(--logoColor);">
+        <div class="row p-5 footerContent">
+            <div class="col-3"></div>
+            <div class="col-3 p-5">
+                <h5 class="fw-bolder">關於我們</h5>
+                <p>公司名稱: 吉卜力工作室</p>
+                <p>地址: 日本東京都小金井市</p>
+                <p>電話: 04-12345678</p>
+            </div>
+            <div class="col-3 p-5">
+                <h5 class="fw-bolder">聯絡我們</h5>
+                <a href="https://www.facebook.com/dongurirepublic.tw/?locale=zh_TW" target="_blank">
+                    <i class="fi fi-brands-facebook"></i>
+                </a>
+                <a href="https://qr-official.line.me/gs/M_studioghibli_GW.png?from=page&openQrModal=true&searchId=studioghibli"
+                    target="_blank"><i class="fi fi-brands-line"></i>
+                </a>
+                <h5 class="fw-bolder">版權宣告</h5>
+                <p class="small">©2023 江明臻小專</p>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </footer>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

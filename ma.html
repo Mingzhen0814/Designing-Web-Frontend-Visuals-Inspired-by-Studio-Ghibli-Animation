@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_江明臻_小專</title>
+    <!-- 小專 -->
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./bootstrap.js"></script>
+    <script src="./project.js"></script>
+    <!-- icon -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <!-- GSAP -->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
+    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
+    <script src="https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b.js"></script>
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body {
+            overflow: hidden;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .horizontal-container {
+            width: 6000px;
+            height: 100vh;
+            max-height: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            background: linear-gradient(rgb(14, 30, 56), rgb(8, 26, 40));
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2000px;
+            height: 100vh;
+            /* border: 1px solid black; */
+        }
+
+        .actorMa {
+            position: relative;
+            transform: translateZ(-3px);
+            z-index: 1000;
+            top: 5%;
+            left: -1000px;
+            height: 300px;
+            width: 500px;
+            /* border: 1px solid red; */
+        }
+
+        .bg1 {
+            position: absolute;
+            display: inline-block;
+            background-image: url('./img/ma_bg_01.jpg');
+            width: 700px;
+            height: 80vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            left: 100px;
+        }
+
+        .bg2 {
+            position: absolute;
+            display: inline-block;
+            background-image: url('./img/ma_bg_03.jpg');
+            width: 700px;
+            height: 80vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right;
+            left: 1000px;
+        }
+
+        .bg3 {
+            position: absolute;
+            display: inline-block;
+            background-image: url('./img/ma_bg_02.jpg');
+            width: 700px;
+            height: 80vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            left: 1900px;
+        }
+
+        .bg4 {
+            position: absolute;
+            display: inline-block;
+            background-image: url('./img/ma_bg_04.jpg');
+            width: 700px;
+            height: 80vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            left: 2800px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="menu" class="menu">
+        <a id="openMenu" href="#" class="position-fixed navIcon" onclick="openMenu()"><i
+                class="fi fi-br-menu-burger"></i></a>
+        <a id="closeMenu" href="#" class="position-fixed navIcon" onclick="closeMenu()" style="display: none;"><i
+                class="fi fi-br-cross"></i></a>
+        <div class="menuContent row container">
+            <a href="./index.html" class="col-12 logo">回到首頁</a>
+            <a href="./sen.html" class="col-12 sen">神隱少女</a>
+            <a href="./hau.html" class="col-12 hau">霍爾的移動城堡</a>
+            <a href="./to.html" class="col-12 to">龍貓</a>
+            <a class="col-12 ma" style="filter: none;">魔女宅急便</a>
+        </div>
+    </nav>
+    <main>
+        
+        <div id="main-content">
+            <div class="horizontal-container">
+                <div class="section" id="section1" style="z-index: 5;">
+                    <img class="kiki actorMa" src="./img/ma_p_01.png" alt="img" style="transform: scaleX(-1);">
+                    <h1 class="fw-bolder" style="color: var(--logoColor);" data-aos="fade-in" data-aos-duration="1000"
+                        data-aos-offset="500">魔女宅急便</h1>
+                    <p class="fw-bolder m-5" style="color: rgba(0, 0, 0, 0.4);">使命必達</p>
+                </div>
+                <div class="section" id="section2" style="z-index: 2;">
+                    <div class="bg1"></div>
+                    <div class="bg2"></div>
+                    <div class="bg3"></div>
+                    <div class="bg4"></div>
+                </div>
+                <div class="section" id="section3" style="z-index: 2;"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background-color: var(--logoColor);margin-top: -3px;">
+        <div class="row p-5 footerContent">
+            <div class="col-3"></div>
+            <div class="col-3 p-5">
+                <h5 class="fw-bolder">關於我們</h5>
+                <p>公司名稱: 吉卜力工作室</p>
+                <p>地址: 日本東京都小金井市</p>
+                <p>電話: 04-12345678</p>
+            </div>
+            <div class="col-3 p-5">
+                <h5 class="fw-bolder">聯絡我們</h5>
+                <a href="https://www.facebook.com/dongurirepublic.tw/?locale=zh_TW" target="_blank">
+                    <i class="fi fi-brands-facebook"></i>
+                </a>
+                <a href="https://qr-official.line.me/gs/M_studioghibli_GW.png?from=page&openQrModal=true&searchId=studioghibli"
+                    target="_blank"><i class="fi fi-brands-line"></i>
+                </a>
+                <h5 class="fw-bolder">版權宣告</h5>
+                <p class="small">©2023 江明臻小專</p>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </footer>
+
+
+    <script>
+        let container = document.querySelector(".horizontal-container")
+        let scrollContainer = document.querySelector("#main-content");
+        let sections = gsap.utils.toArray(".section");
+        let maxWidth = 0;
+
+        const getMaxWidth = () => {
+            maxWidth = 0;
+            sections.forEach((section) => {
+                maxWidth += section.offsetWidth;
+            });
+        };
+        getMaxWidth();
+        ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+
+        // GSAP create horizontal scroll
+        let horizontalScroll = gsap.to(sections, {
+            x: () => `-${maxWidth - window.innerWidth}`,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: scrollContainer,
+                pin: true,
+                scrub: true,
+                end: () => `+=${maxWidth}`,
+                invalidateOnRefresh: true,
+            }
+        });
+
+        let getPosition = getScrollLookup(".section", { start: "center center", containerAnimation: horizontalScroll });
+
+        gsap.utils.toArray(".navigation li a").forEach(el => {
+            el.addEventListener("click", e => {
+                e.preventDefault();
+                gsap.to(window, {
+                    scrollTo: getPosition(el.getAttribute("href")),
+                    overwrite: "auto",
+                    duration: 1
+                });
+            });
+        });
+
+        /*
+        Returns a FUNCTION that you can feed an element to get its scroll position.
+        - targets: selector text, element, or Array of elements 
+        - config: an object with any of the following optional properties: 
+            - start: defaults to "top top" but can be anything like "center center", "100px 80%", etc. Same format as "start" and "end" ScrollTrigger values.
+            - containerAnimation: the horizontal scrolling tween/timeline. Must have an ease of "none"/"linear".
+            - pinnedContainer: if you're pinning a container of the element(s), you must define it so that ScrollTrigger can make the proper accommodations.
+        */
+        function getScrollLookup(targets, { start, pinnedContainer, containerAnimation }) {
+            let triggers = gsap.utils.toArray(targets).map(el => ScrollTrigger.create({
+                trigger: el,
+                start: start || "top top",
+                pinnedContainer: pinnedContainer,
+                refreshPriority: -10,
+                containerAnimation: containerAnimation
+            })),
+                st = containerAnimation && containerAnimation.scrollTrigger;
+            return target => {
+                let t = gsap.utils.toArray(target)[0],
+                    i = triggers.length;
+                while (i-- && triggers[i].trigger !== t) { };
+                if (i < 0) {
+                    return console.warn("target not found", target);
+                }
+                return containerAnimation ? st.start + (triggers[i].start / containerAnimation.duration()) * (st.end - st.start) : triggers[i].start;
+            };
+        }
+        // gsap.to(".kiki", {
+        //     scrollTrigger: ".kiki", // start the animation when ".box" enters the viewport (once)
+        //     x: 500,
+        // });
+        gsap.to(".kiki", {
+            xPercent: 1500 * (sections.length),
+            ease: "none",
+            scrollTrigger: {
+                trigger: container,
+                scrub: 1,
+                // base vertical scrolling on how wide the container is so it feels more natural.
+                end: "+=25000",
+            }
+        });
+        AOS.init();
+    </script>
+</body>
+
+</html>

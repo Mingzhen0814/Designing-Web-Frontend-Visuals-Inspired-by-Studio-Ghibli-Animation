@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_江明臻_小專</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./bootstrap.js"></script>
+    <script src="./project.js"></script>
+    <!-- icon -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- slick-slide引用 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+    <style>
+        .videoContainer {
+            position: relative;
+            z-index: -100;
+            width: 100%;
+            height: 100vh;
+            margin-bottom: -3px;
+        }
+
+        Video {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            /* border: 1px solid blue; */
+            z-index: -1
+        }
+
+        .charactorMa {
+            /* position: absolute; */
+            /* top: 0; */
+            height: 1300px;
+            width: 100%;
+            transform: translateZ(-1px);
+            margin-bottom: -30px;
+        }
+
+        .leftSide {
+            height: 100%;
+            background-color: rgb(183, 168, 137);
+            flex: 1;
+            border-top-left-radius: 25px;
+            /* border: 10px solid white; */
+            margin-top: -30px;
+        }
+
+        .leftSide:hover {
+            flex: 3;
+            /* box-shadow: 15px -10px 15px gray; */
+
+        }
+
+        .rightSide {
+            border-top-right-radius: 25px;
+            height: 100%;
+            margin-top: -30px;
+            background-color: rgb(210, 108, 122);
+            flex: 1;
+        }
+
+        .rightSide:hover {
+            flex: 3;
+            /* box-shadow: -10px -10px 15px gray; */
+        }
+
+        .actorLeft,
+        .actorRight {
+            width: 90%;
+            height: auto;
+            /* margin: 15px; */
+            display: inline-flex;
+
+        }
+
+        .leftSide>.actorLeft,
+        .leftSide>.actorRight {
+            background-color: #d26c7a;
+            border: 10px solid rgb(210, 108, 122);
+        }
+
+        .rightSide>.actorLeft,
+        .rightSide>.actorRight {
+            background-color: #b7a889;
+            border: 10px solid rgb(183, 168, 137);
+        }
+
+        .actorLeft>img,
+        .actorRight>img {
+            width: 45%;
+            height: 100%;
+        }
+
+        h1,
+        h3,
+        p:not(footer p) {
+            color: white;
+            text-align: center;
+            text-shadow: 5px 5px 5px black;
+            font-weight: bolder;
+            margin: auto;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        .color1 {
+            z-index: 5000;
+            background-color: var(--logoColor);
+            width: 100%;
+            /* height: 250px; */
+            transform: translateZ(-1px);
+            padding: 1%;
+        }
+
+        .slick-slide {
+            width: 80vw;
+            height: 20vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 8000;
+            padding-right: 1%;
+            transform: translateZ(-1px);
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="menu" class="menu">
+        <a id="openMenu" href="#" class="position-fixed navIcon" onclick="openMenu()"><i
+                class="fi fi-br-menu-burger"></i></a>
+        <a id="closeMenu" href="#" class="position-fixed navIcon" onclick="closeMenu()" style="display: none;"><i
+                class="fi fi-br-cross"></i></a>
+        <div class="menuContent row container">
+            <a href="./index.html" class="col-12 logo">回到首頁</a>
+            <a href="./sen.html" class="col-12 sen">神隱少女</a>
+            <a href="./hau.html" class="col-12 hau">霍爾的移動城堡</a>
+            <a class="col-12 to" style="filter: none;">龍貓</a>
+            <a href="./ma.html" class="col-12 ma">魔女宅急便</a>
+        </div>
+    </nav>
+    <main>
+        <div class="videoContainer">
+            <video autoplay muted loop id="toVideo">
+                <source src="./img/to_01.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="charactorMa d-inline-flex">
+            <div class="leftSide side">
+                <h1 class="m-5 text-center">主要人物</h1>
+                <div class="m-3 actorLeft">
+                    <img src="./img/to_01.jpg" alt="to_01.jpg">
+                    <div class="introText">
+                        <h3 class="text-center">小梅</h3>
+                        <p class="text-center">Lorem ipsum dolor, sit amet consectetur
+                            adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="m-3 actorRight">
+                    <div class="introText">
+                        <h3 class="text-center">小月</h3>
+                        <p class="text-center">Lorem ipsum dolor, sit amet consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <img src="./img/to_02.jpg" alt="to_02.jpg">
+                </div>
+                <div class="m-3 actorLeft">
+                    <img src="./img/to_03.jpg" alt="to_03.jpg">
+                    <div class="introText">
+                        <h3 class="text-center">小凱</h3>
+                        <p class="text-center">Lorem ipsum dolor, sit amet consectetur
+                            adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide side">
+                <h1 class="m-5 text-center">奇幻生物</h1>
+                <div class="m-3 actorLeft">
+                    <img src="./img/to_05.jpg" alt="to_05.jpg">
+                    <div class="introText">
+                        <h3 class="text-center">灰塵精靈</h3>
+                        <p class="text-center">Lorem ipsum dolor, sit amet consectetur
+                            adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="m-3 actorRight">
+                    <div class="introText">
+                        <h3 class="text-center">龍貓</h3>
+                        <p class="text-center">Lorem ipsum dolor, sit amet consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <img src="./img/to_04.jpg" alt="to_04.jpg">
+                </div>
+                <div class="m-3 actorLeft">
+                    <img src="./img/to_06.jpg" alt="to_06.jpg">
+                    <div class="introText">
+                        <h3 class="text-center">貓巴士</h3>
+                        <p class="text-center">Lorem ipsum dolor, sit amet consectetur
+                            adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slick-container color1">
+            <div class="slick-wrapper" style="margin: 0 -80px;">
+                <img class="slick-slide" src='./img/to_08.jpg'></img>
+                <img class="slick-slide" src='./img/to_09.jpg'></img>
+                <img class="slick-slide" src='./img/to_10.jpg'></img>
+                <img class="slick-slide" src='./img/to_11.jpg'></img>
+                <img class="slick-slide" src='./img/to_12.jpg'></img>
+                <img class="slick-slide" src='./img/to_13.jpg'></img>
+                <img class="slick-slide" src='./img/to_14.jpg'></img>
+                <img class="slick-slide" src='./img/to_15.jpg'></img>
+                <img class="slick-slide" src='./img/to_16.jpg'></img>
+                <img class="slick-slide" src='./img/to_17.jpg'></img>
+            </div>
+        </div>
+    </main>
+    <footer style="background-color: var(--logoColor);z-index: 1000;">
+        <div class="row p-5 footerContent">
+            <div class="col-3">
+            </div>
+            <div class="col-3 p-5">
+                <h5 class="fw-bolder">關於我們</h5>
+                <p>公司名稱: 吉卜力工作室</p>
+                <p>地址: 日本東京都小金井市</p>
+                <p>電話: 04-12345678</p>
+            </div>
+            <div class="col-3 p-5">
+                <h5 class="fw-bolder">聯絡我們</h5>
+                <a href="https://www.facebook.com/dongurirepublic.tw/?locale=zh_TW" target="_blank">
+                    <i class="fi fi-brands-facebook"></i>
+                </a>
+                <a href="https://qr-official.line.me/gs/M_studioghibli_GW.png?from=page&openQrModal=true&searchId=studioghibli"
+                    target="_blank"><i class="fi fi-brands-line"></i>
+                </a>
+                <h5 class="fw-bolder">版權宣告</h5>
+                <p class="small">©2023 江明臻小專</p>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </footer>
+    <script>
+        $('.slick-wrapper').slick({
+            autoplay: true,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            speed: 4000,
+            autoplaySpeed: 0,
+            slidesToShow: 5,
+            touchMove: false,
+            arrows: false,
+            cssEase: 'linear',
+            infinite: true,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }]
+        });
+    </script>
+</body>
+
+</html>
